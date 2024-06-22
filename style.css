@@ -1,0 +1,762 @@
+body{
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 100px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*LOGO*/
+
+.logo {
+    height: auto; /* Ensure logo height adjusts automatically */
+    max-width: 100%; /* Ensure logo width adjusts to container */
+}
+
+.nav-logo {
+    background-color: white;
+    height: 80px;
+    width: 250px;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.nav-logo img {
+    max-width: 80%; /* Ensure image width adjusts to its container */
+    height: auto; /* Ensure image height adjusts automatically */
+    margin-top: 5px; /* Adjust margin top for spacing */
+}
+
+
+/*MENU*/
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+}
+
+.navbar, .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.brand{
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.brand:hover{
+    font-weight: bolder;
+    color: #428aff;
+}
+
+/*LOGIN BUTTON*/
+
+button{
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    background: #c3393f;
+    padding: 0.5em 1.3em;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.btn:hover{
+    background: white;
+    color: #c3393f;
+}
+
+.menu-btn{
+    margin-left: 1em;
+    background: none;
+    display: inline-block;
+}
+
+.menu-btn span{
+    font-size: 2.3em;
+}
+
+.dropdown > div, .sub-dropdown > div {
+    cursor: pointer;
+}
+
+.dropdown .menu a:hover{
+    color: #9b9b9b;
+}
+
+
+/*hero*/
+
+.hero {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    max-width: 1000px; /* Adjust max-width as per your design */
+    margin: 0 auto; /* Center align the hero section */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.hero-column {
+    width: 100%; /* Full width for each column */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.hero-column h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 50px; /* Adjust font size for smaller screens */
+    margin: 0;
+}
+
+.hero-column p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.hero-column iframe {
+    width: 100%; /* Make iframe responsive */
+    height: 400px; /* Set a fixed height for iframe */
+}
+
+.btn {
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    background: #c3393f;
+    padding: 0.5em 1.3em;
+    border-radius: 16px;
+    color: #fff;
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+
+
+
+  /*Services*/
+ /* General Styles */
+.chollakkam {
+    background-color: #c3393f;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.chollakkam h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin: 0;
+}
+
+.chollakkam p {
+    margin: 10px 0;
+    font-size: 18px; /* Adjust font size for smaller screens */
+}
+
+.give-button {
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: white;
+    color: #c3393f;
+    border: none;
+    cursor: pointer;
+}
+
+.give-button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Service Section Styles */
+.service-section {
+    padding: 50px 0;
+}
+
+.service-title h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    width: calc(50% - 20px); /* Two columns per row, adjust as needed */
+    padding: 10px;
+    text-align: center;
+}
+
+.card {
+    width: 400px;
+    height: 200px;
+    padding: 1.5em;
+    background: linear-gradient(#ffffff 50%, #c3393f 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    background-position: 0 100%;
+}
+
+.icon-wrapper {
+    background-color: #c3393f;
+    height: 3em;
+    width: 3em;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+    transition: 0.5s;
+}
+
+.card:hover .icon-wrapper {
+    background-color: #ffffff;
+    color: #c3393f;
+}
+
+.card:hover h3 {
+    color: #ffffff;
+}
+
+.card:hover p {
+    color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* One column per row on smaller screens */
+    }
+}
+
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjusts the gap between images */
+}
+
+.image-card {
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: -6px 6px 20px #00000070;
+    transition: .3s linear;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.image-card:hover {
+    transform: translateY(-24px);
+    z-index: 1; /* Ensures the hovered card is on top */
+}
+
+.image-card:hover ~ .image-card {
+    transform: translateX(60px);
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.image-card:hover .title {
+    background: rgba(0, 0, 0, 0.9); /* Darker background on hover */
+}
+
+@media (max-width: 768px) {
+    .images-container {
+        flex-direction: column; /* Stack images vertically on mobile */
+        align-items: center; /* Center align items on mobile */
+    }
+
+    .image-card {
+        width: 100%; /* Full width for each card on mobile */
+        max-width: 240px; /* Limit maximum width for consistency */
+        margin-bottom: 20px; /* Space between cards on mobile */
+    }
+
+    .image-card:not(:first-child) {
+        margin-left: 0; /* Remove left margin on mobile */
+    }
+}
+
+
+/*chollakkam*/
+
+
+
+
+/*our collabrations*/
+
+.team-title {
+    text-align: center; /* Center aligns all content within .team-title */
+    padding: 20px 20px; /* Adjust padding as per your design */
+}
+
+.team-title h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-size: 50px; /* Adjust font size for smaller screens */
+    font-weight: 400;
+    margin-bottom: 10px; /* Optional: Adjust spacing */
+}
+
+.team-title p {
+    font-family: roboto; /* Optional: Adjust font-family */
+    font-size: 20px; /* Optional: Adjust font size */
+    line-height: 25px; /* Optional: Adjust line height */
+    max-width: 500px; /* Optional: Ensure paragraph does not exceed parent width */
+    text-align: justify; /* Justify text */
+    margin: 0 auto; /* Center align text within the parent */
+}
+
+
+.collab-container {
+    width: 60%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.collab-box {
+    width: calc(33.33% - 20px); /* 33.33% width with spacing between items */
+    margin-bottom: 20px; /* Space between items */
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the zoomed content doesn't overflow the box */
+    position: relative; /* Ensures child elements are positioned relative to this box */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.image-wrapper {
+    border-radius: 20px;
+    overflow: hidden; /* Ensures the zoomed content doesn't overflow the wrapper */
+    position: relative;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.collab-box:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+    .collab-container {
+        width: 90%; /* Adjust width for mobile view */
+    }
+    
+    .collab-box {
+        width: 100%; /* Full width for each item on mobile */
+    }
+}
+
+
+  /*Footer*/
+
+  .footer {
+    background-color: #c3393f;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-form h1 {
+    padding: 10px;
+}
+
+.footer-column {
+    margin-bottom: 30px;
+    flex: 1;
+    max-width: 200px;
+}
+
+.footer-column i {
+    display: inline-block;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+.footer-column h4 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.footer-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea.form-control {
+    border-radius: 20px;
+}
+
+.form-control::placeholder {
+    color: white; /* Change placeholder text color to white */
+    opacity: 1; /* Ensure the placeholder is fully opaque */
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 15px 35px;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+  
+
+/*Our Collabrations */
+
+/* Responsive design */
+
+/*menu bar responsive*/
+
+@media screen and (min-width: 800px) {
+    .navbar{
+        padding: 0 1.5em;
+    }
+    .dropdown > div{
+        padding: 1.5em 1em;
+    }
+    .mega-menu{
+        display: flex;
+        justify-content: center;
+    }
+    .menu-btn{
+        display: none;
+    }
+    .menu{
+        background: #fff;
+        position: absolute;
+        top: 4.65em;
+        left: 0;
+        width: 100%;
+        padding: 0 2em;
+        overflow-y: scroll;
+        transition: 0.4s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    .menu > li:first-child{
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .sub-dropdown > div span:first-child{
+        font-weight: bold;
+    }
+    
+    .dropdown > div{
+        border-bottom: 3px #fff solid;
+        transition: 0.3s;
+    }
+
+    .dropdown:hover > div{
+        border-color: #000;
+    }
+
+    .dropdown li{
+        margin-bottom: 1em;
+    }
+
+    .dropdown > div span:last-child, 
+    .sub-dropdown > div{
+        display: none;
+    }
+
+    /* Width */
+    .menu::-webkit-scrollbar{
+        width: 8px;
+    }
+    /* Track */
+    .menu::-webkit-scrollbar-track{
+        background: #f1f1f1;
+    }
+    /* Handle */
+    .menu::-webkit-scrollbar-thumb{
+        background: #888;
+    }
+
+    /* Handle on hover */
+    .menu::-webkit-scrollbar-thumb:hover{
+        background: #555;
+    }
+
+    /* Hide menu */
+    .menu{
+        height: 0;
+    }
+    .dropdown:hover .menu{
+        height: 50vh;
+        padding: 2em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbar{
+        padding: 1em 1.5em;
+    }
+    .menu-container{
+        background: #fff;
+        position: absolute;
+        top: 4.4em;
+        left: 0;
+        width: 100%;
+        overflow-y: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Width */
+    .mega-menu::-webkit-scrollbar{
+        width: 8px;
+    }
+    /* Track */
+    .mega-menu::-webkit-scrollbar-track{
+        background: #f1f1f1;
+    }
+    /* Handle */
+    .mega-menu::-webkit-scrollbar-thumb{
+        background: #888;
+    }
+    /* Handle on hover */
+    .mega-menu::-webkit-scrollbar-thumb:hover{
+        background: #555;
+    }
+    .mega-menu{
+        padding: 0 1em 1em 1em;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .mega-menu li{
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .mega-menu li > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5em;
+    }
+    .menu li{
+        padding: 0 1em;
+        font-size: 1em;
+        font-weight: 400;
+    }
+    .menu a{
+        display: block;
+        margin: 0.8em 0;
+    }
+    .menu{
+        display: none;
+    }
+    /* Toggle class for Javascript */
+    .menu-show{
+        display: block;
+    }
+    .material-symbols-outlined{
+        transition: 0.3s;
+    }
+    /* Toggle class for javascript */
+    .icon-rotated{
+        transform: rotate(90deg);
+    }
+    .dropdown>div, .sub-dropdown > div{
+        cursor: pointer;
+        padding: 0.5em;
+    }
+    .sub-menu{
+        font-size: 0.9em;
+        display: none;
+    }
+    /* Toggle class for Javascript */
+    .sub-menu-show{
+        display: block;
+    }
+    .dropdown:hover>div, .sub-dropdown:hover>div{
+        background: #dbdbdb;
+    }
+    /* Hide menu */
+    .menu-container{
+        height: 0;
+    }
+    /* Toggle class for javascript */
+    .mega-menu-show{
+        height: 50vh;
+    }
+}
+
+/*hero responsive*/
+
+/* Media Query for Mobile View */
+@media (max-width: 600px) {
+    .hero-column {
+        width: 100%; /* Full width for each column on mobile */
+        margin-bottom: 20px; /* Add space between columns */
+    }
+}
+
+/* Media Query for Desktop View */
+@media (min-width: 601px) {
+    .hero {
+        flex-direction: row; /* Side by side layout on desktop */
+    }
+
+    .hero-column {
+        width: 50%; /* Half width for each column on desktop */
+    }
+}
+
+/*service responsive*/
+
+@media screen and (min-width: 768px) {
+    section {
+      padding: 0 2em;
+    }
+    .column {
+      flex: 0 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .column {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .column {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em 3em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+  }
+
+  
+
+
+
+
