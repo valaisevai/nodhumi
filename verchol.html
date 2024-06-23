@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verchol - Tamil Root Word Finder</title>
+    <style>
+        /* Global Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #c3393f; /* Updated background color */
+            font-family: 'Arial', sans-serif;
+            padding-top: 40px; /* Padding to position content slightly away from the top */
+            color: #fff; /* Set text color to white for better visibility */
+        }
+
+        /* Title Styles */
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+            outline: none;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        /* Results Display Styles */
+        .results-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Section -->
+    <div class="title">Verchol</div>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search for a word..." />
+        <span class="search-icon" id="searchBtn">&#128269;</span>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-container" id="results">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <!-- xlsx library for reading Excel files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        // JavaScript for handling the search and Excel data
+        document.getElementById('searchBtn').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if (!query) return;
+            
+            // Load Excel file
+            fetch('path_to_your_excel_file.xlsx')
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const sheetName = workbook.SheetNames[0];
+                    const sheet = workbook.Sheets[sheetName];
+                    const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+                    // Search in Excel data
+                    const result = rows.find(row => row[0].toLowerCase() === query);
+                    displayResult(result ? result[1] : 'No match found');
+                });
+        }
+
+        function displayResult(result) {
+            document.getElementById('results').textContent = result;
+        }
+    </script>
+</body>
+</html>

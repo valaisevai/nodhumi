@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanippan - Tamil Calculator</title>
+    <style>
+        /* CSS Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #c3393f;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .calculator-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .display {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: right;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+            word-break: break-all; /* Ensures long text wraps */
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.5em;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn:active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display" id="display">௦</div>
+            <div class="buttons">
+                <!-- Numbers in Tamil -->
+                <button class="btn" data-value="௧">௧</button>
+                <button class="btn" data-value="௨">௨</button>
+                <button class="btn" data-value="௩">௩</button>
+                <button class="btn" data-value="+" class="operator">+</button>
+
+                <button class="btn" data-value="௪">௪</button>
+                <button class="btn" data-value="௫">௫</button>
+                <button class="btn" data-value="௬">௬</button>
+                <button class="btn" data-value="-" class="operator">-</button>
+
+                <button class="btn" data-value="௭">௭</button>
+                <button class="btn" data-value="௮">௮</button>
+                <button class="btn" data-value="௯">௯</button>
+                <button class="btn" data-value="*" class="operator">*</button>
+
+                <button class="btn" data-value="௦">௦</button>
+                <button class="btn" data-value="C" id="clear">C</button>
+                <button class="btn" data-value="=" id="equals">=</button>
+                <button class="btn" data-value="/" class="operator">/</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript functionality
+        const tamilNumbers = {
+            '௦': '0',
+            '௧': '1',
+            '௨': '2',
+            '௩': '3',
+            '௪': '4',
+            '௫': '5',
+            '௬': '6',
+            '௭': '7',
+            '௮': '8',
+            '௯': '9'
+        };
+
+        const tamilDigits = Object.fromEntries(Object.entries(tamilNumbers).map(([k, v]) => [v, k]));
+
+        const display = document.getElementById('display');
+        let currentInput = '';
+
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-value');
+
+                if (value === 'C') {
+                    currentInput = '';
+                } else if (value === '=') {
+                    calculate();
+                } else {
+                    if (tamilNumbers.hasOwnProperty(value)) {
+                        currentInput += tamilNumbers[value];
+                    } else {
+                        currentInput += value;
+                    }
+                }
+
+                display.textContent = currentInput.split('').map(char => tamilDigits[char] || char).join('');
+            });
+        });
+
+        function calculate() {
+            try {
+                let result = eval(currentInput);
+                display.textContent = result.toString().split('').map(char => tamilDigits[char] || char).join('');
+                currentInput = result.toString();
+            } catch (error) {
+                display.textContent = 'Error';
+                currentInput = '';
+            }
+        }
+    </script>
+</body>
+</html>
