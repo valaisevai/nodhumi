@@ -159,11 +159,6 @@ button{
     margin-top: 10px; /* Adjust margin as needed */
 }
 
-
-
-
-  /*Services*/
- /* General Styles */
 .chollakkam {
     background-color: #c3393f;
     color: white;
@@ -199,6 +194,34 @@ button{
 }
 
 /* Service Section Styles */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.column {
+    width: calc(50% - 20px);
+    padding: 10px;
+    text-align: center;
+}
+.card {
+    width: 400px;
+    height: 200px;
+    padding: 1.5em;
+    background: linear-gradient(#ffffff 50%, #c3393f 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card:hover {
+    background-position: 0 100%;
+}
+
+
 .service-section {
     padding: 50px 0;
 }
